@@ -1,0 +1,34 @@
+﻿le visiteur toujours dans le répértoire web
+l'outils app_dev.php est utile au dévelloper
+il y a dedans par exmple: _profiler
+http://knpbundles.com/ site des bundle de la commu symphonie, regroupe une groose partie de ses derniers
+
+
+Ce qu'il faut retenir de tout cela, c'est que pour qu'un bundle soit opérationnel, il faut :
+
+    Son code source, situé dans src/Application/Bundle, et dont le seul fichier obligatoire est la classe à la racine OCPlatformBundle.php;
+
+    Enregistrer le bundle dans le noyau pour qu'il soit chargé, en modifiant le fichier app/AppKernel.php;
+
+    Enregistrer les routes (si le bundle en contient) dans le Routeur pour qu'elles soient chargées, en modifiant le fichier app/config/routing.yml.
+
+Ces trois points sont bien sûr effectués automatiquement lorsqu'on utilise le générateur. Mais vous pouvez tout à fait créer un bundle sans l'utiliser,
+et il faudra alors remplir cette petite checklist manuellement.
+
+https://github.com/winzou/mooc-symfony/tree/iteration-1
+
+php bin/console generate:bundle
+
+vider le cache : php bin/console cache:clear --env=prod
+php bin/console cache:clear
+
+
+pour le moteur TWIG: https://twig.symfony.com/doc/2.x/filters/index.html
+
+Parfois, il se peut que la commande cache:clear génère des erreurs lors de son exécution. 
+Dans ce cas, essayez de relancer la commande, parfois une deuxième passe peut résoudre les problèmes.
+Dans le cas contraire, supprimez le cache à la main en supprimant simplement le répertoire 
+var/cache/dev (ou var/cache/prod suivant l’environnement).
+
+regarder les routes avancé:
+https://openclassrooms.com/courses/developpez-votre-site-web-avec-le-framework-symfony/le-routeur-de-symfony

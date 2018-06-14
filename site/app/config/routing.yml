@@ -1,0 +1,7 @@
+mysite_hello_world:
+    resource: "@MYSITEHelloWorldBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
