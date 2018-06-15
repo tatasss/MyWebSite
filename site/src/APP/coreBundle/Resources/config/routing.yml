@@ -1,0 +1,3 @@
+ap_pcore_homepage:
+    path:     /
+    defaults: { _controller: APPcoreBundle:Main:index }
