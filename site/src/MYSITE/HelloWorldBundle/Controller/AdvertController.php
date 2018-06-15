@@ -15,7 +15,10 @@ use Symfony\Component\HttpFoundation\Response;
 class AdvertController extends Controller
 {
     function indexAction(){
-        return new Response($this->get('templating')->render('MYSITEHelloWorldBundle:Advert:index.html.twig'));
+        $content = $this
+            ->get('templating')
+            ->render('MYSITEHelloWorldBundle:Advert:index.html.twig', array('nom' => 'winzou'));
+        return new Response($content);
     }
 
 }
